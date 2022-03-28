@@ -21,7 +21,7 @@ function App() {
       <h2>Todo with React</h2>
       <span className="heading">Tasks</span>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
-      <ToDoList />
+      <ToDoList todos={todos} setTodos={setTodos} />
     </div>
   );
 }
