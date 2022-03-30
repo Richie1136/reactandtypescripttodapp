@@ -8,7 +8,7 @@ function App() {
   const [todo, setTodo] = useState<string>("");
   const [todos, setTodos] = useState<Todo[]>([]);
 
-  const handleAdd = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleAdd = (event: React.FormEvent) => {
     event?.preventDefault();
     if (todo) {
       setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
