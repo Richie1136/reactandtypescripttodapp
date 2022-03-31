@@ -1,7 +1,7 @@
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { MdOutlineDownloadDone } from "react-icons/md";
 import { Todo } from "../../interface";
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Todo.css";
 
 interface Props {
@@ -28,13 +28,19 @@ const ToDo = ({ todo, todos, setTodos }: Props) => {
     }
   };
 
+  const editForm = (event: React.FormEvent, id: number) => {
+    event.preventDefault();
+    setTodos(todos.map((todo) => (todo.id === id ? { ...todo, todo: editToDo } : todo)));
+    setEdit(false);
+  };
+
   const setTodoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEditToDo(event?.target.value);
   };
 
   return (
     <>
-      <form className="todos-single">
+      <form className="todos-single" onSubmit={(event) => editForm(event, todo.id)}>
         {edit && <input className="todos-single---text" value={editToDo} onChange={setTodoChange} />}
 
         {todo.isDone ? (
