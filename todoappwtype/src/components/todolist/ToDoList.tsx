@@ -1,5 +1,6 @@
 import { Todo } from "../../interface";
 import ToDo from "../todo/Todo";
+import "./ToDoList.css";
 
 interface Props {
   todos: Todo[];
