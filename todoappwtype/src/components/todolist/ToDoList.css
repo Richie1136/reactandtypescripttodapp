@@ -14,3 +14,19 @@
   justify-content: space-between;
   align-items: flex-start;
 }
+
+.todos-heading {
+  font-size: 30px;
+  color: white;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 95%;
+    flex-direction: column;
+  }
+}
+
+.remove {
+  background-color: rgb(235, 103, 80);
+}
