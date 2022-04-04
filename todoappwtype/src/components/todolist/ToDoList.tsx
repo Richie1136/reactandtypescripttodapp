@@ -5,6 +5,8 @@ import "./ToDoList.css";
 interface Props {
   todos: Todo[];
   setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+  completedTodos: Todo[];
+  setCompeletedTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
 const ToDoList = ({ todos, setTodos }: Props) => {
